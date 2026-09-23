@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vegmeet - SMS Marketplace Simulator</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="app-header">
+    <div class="app-header-inner">
+      <div class="app-header-title">
+        <span class="leaf-mark">&#9632;</span> VEGMEET
+        <span class="app-subtitle">Button Phone Channel &mdash; SMS Marketplace Simulator</span>
+      </div>
+      <a class="channel-switch" href="/app-view">Switch to Web App View &rarr;</a>
+    </div>
+  </header>
+
+  <section class="how-it-works">
+    <strong>How this works:</strong> This screen simulates an SMS conversation. No smartphone or internet needed in real life &mdash;
+    every reply is sent by pressing digits on a phone keypad, just like below. Press "New Conversation" to start as a fresh farmer/buyer phone number.
+    Use the on-screen keypad to reply with a single number shown in the menu, then press Send.
+  </section>
+
+  <main class="phone-shell">
+    <div class="thread-toolbar">
+      <div class="thread-id">Session: <span id="phoneLabel">not started</span></div>
+      <button id="newSessionBtn" class="btn-secondary">New Conversation</button>
+    </div>
+
+    <div id="thread" class="thread" aria-live="polite"></div>
+
+    <div class="composer">
+      <div id="inputPreview" class="input-preview" aria-live="polite">&nbsp;</div>
+      <div class="keypad" id="keypad">
+        <button class="key" data-key="1">1</button>
+        <button class="key" data-key="2">2</button>
+        <button class="key" data-key="3">3</button>
+        <button class="key" data-key="4">4</button>
+        <button class="key" data-key="5">5</button>
+        <button class="key" data-key="6">6</button>
+        <button class="key" data-key="7">7</button>
+        <button class="key" data-key="8">8</button>
+        <button class="key" data-key="9">9</button>
+        <button class="key key-clear" data-action="clear">Clear</button>
+        <button class="key" data-key="0">0</button>
+        <button class="key key-send" data-action="send">Send</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

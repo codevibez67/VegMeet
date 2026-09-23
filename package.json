@@ -1,0 +1,12 @@
+{
+  "name": "vegmeet",
+  "version": "1.0.0",
+  "description": "Vegmeet - numeric SMS-style farmer-to-buyer agri marketplace prototype",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

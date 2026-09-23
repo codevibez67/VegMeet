@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Vegmeet - Web Dashboard</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==================== LANDING (choose role + language) ==================== -->
+  <div id="view-landing" class="landing">
+    <div class="brand-big"><span class="leaf-mark" style="color:#2e6b34">&#9632;</span> VEGMEET</div>
+    <div class="tagline" id="landingTagline">Vegmeet connects farmers and buyers directly - by SMS or by web.</div>
+    <div class="role-buttons">
+      <button class="role-btn" id="btnContinueFarmer">Continue as Farmer</button>
+      <button class="role-btn" id="btnContinueBuyer">Continue as Buyer</button>
+    </div>
+    <div id="landingLangLabel" style="font-weight:700; margin-bottom:10px;">Select your language</div>
+    <div class="lang-picker" id="landingLangPicker"></div>
+    <p style="margin-top:28px;"><a href="/sms-view" id="landingSwitchToSms">Switch to SMS View &rarr;</a></p>
+  </div>
+
+  <!-- ==================== APP SHELL ==================== -->
+  <div id="app-shell" class="hidden">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <span class="leaf-mark">&#9632;</span> VEGMEET
+          <span class="channel-tag" id="channelTag">Web App Channel</span>
+        </div>
+        <div class="topbar-right">
+          <select class="lang-select" id="langSelect"></select>
+          <button class="role-switch" id="btnSwitchRole">Switch Role</button>
+          <a class="channel-switch" href="/sms-view" id="topSwitchToSms">Switch to SMS View &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar">
+      <div class="navbar-inner" id="navbar"></div>
+    </div>
+
+    <div class="page">
+      <div id="view-home"></div>
+      <div id="view-sell" class="hidden"></div>
+      <div id="view-buy" class="hidden"></div>
+      <div id="view-my-listings" class="hidden"></div>
+      <div id="view-my-orders" class="hidden"></div>
+      <div id="view-market-info" class="hidden"></div>
+      <div id="view-grievances" class="hidden"></div>
+      <div id="view-profile" class="hidden"></div>
+      <div id="view-notifications" class="hidden"></div>
+      <div id="view-listing-detail" class="hidden"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,298 @@
+/* ============================================================================
+   Vegmeet Web App channel - same restrained, non-generic visual identity as
+   the SMS channel: off-white background, one green accent, no gradients, no
+   glassmorphism. Visually richer (cards, real charts, tables) since it is
+   not constrained by SMS-length text, but unmistakably the same product.
+   ============================================================================ */
+
+:root {
+  --bg: #f4f3ef;
+  --surface: #ffffff;
+  --border: #c9c7bd;
+  --text: #1c1c1a;
+  --text-muted: #55534c;
+  --accent: #2e6b34;
+  --accent-dark: #204a24;
+  --accent-light: #e6efe3;
+  --danger: #8a2c2c;
+  --warn: #8a6a1f;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans', 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu',
+    'Noto Sans Kannada', 'Noto Sans Malayalam', 'Noto Sans Bengali', 'Noto Sans Gujarati',
+    'Noto Sans Gurmukhi', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+a { color: var(--accent-dark); }
+
+button, select, input {
+  font-family: inherit;
+  font-size: 16px;
+}
+
+/* -------------------- Top bar -------------------- */
+.topbar {
+  background: var(--accent-dark);
+  color: #ffffff;
+  border-bottom: 4px solid var(--accent);
+}
+
+.topbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand .leaf-mark { color: #9fd39a; font-size: 15px; }
+.brand .channel-tag { font-size: 13px; font-weight: 400; color: #d9e6d6; }
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.channel-switch, .role-switch {
+  color: #d9e6d6;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid #4a7a4e;
+  padding: 6px 10px;
+  background: transparent;
+  cursor: pointer;
+}
+.channel-switch:hover, .role-switch:hover { color: #fff; border-color: #9fd39a; }
+
+.lang-select {
+  background: var(--accent-dark);
+  color: #fff;
+  border: 1px solid #4a7a4e;
+  padding: 6px 8px;
+}
+
+/* -------------------- Nav -------------------- */
+.navbar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 0 16px;
+}
+
+.nav-btn {
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+.nav-btn.active {
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent);
+}
+.nav-btn:hover { color: var(--accent-dark); }
+
+/* -------------------- Layout -------------------- */
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 16px 60px;
+}
+
+.hidden { display: none !important; }
+
+.section-heading {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--accent);
+  padding: 12px 14px;
+}
+.price-card .price-item { font-weight: 700; font-size: 16px; }
+.price-card .price-value { font-size: 22px; font-weight: 700; color: var(--accent-dark); margin-top: 4px; }
+
+/* -------------------- Buttons -------------------- */
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent-dark);
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: var(--accent-dark); }
+.btn-outline {
+  background: var(--surface);
+  color: var(--accent-dark);
+  border: 1px solid var(--accent);
+}
+.btn-outline:hover { background: var(--accent-light); }
+.btn-small { padding: 6px 10px; font-size: 13px; }
+.btn-danger { background: var(--surface); color: var(--danger); border: 1px solid var(--danger); }
+
+/* -------------------- Forms -------------------- */
+.form-row { margin-bottom: 14px; }
+.form-row label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 14px; }
+.form-row input[type=text], .form-row input[type=number], .form-row select, .form-row textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+}
+.form-row .radio-group { display: flex; flex-direction: column; gap: 6px; }
+.form-row .radio-group label { font-weight: 400; display: flex; align-items: center; gap: 6px; }
+
+.item-picker { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 10px; margin-bottom: 16px; }
+.item-tile {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 14px 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+.item-tile.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); }
+.item-tile .emoji { font-size: 26px; display: block; margin-bottom: 6px; }
+
+/* -------------------- Table -------------------- */
+table.data-table { width: 100%; border-collapse: collapse; background: var(--surface); }
+table.data-table th, table.data-table td {
+  text-align: left;
+  padding: 10px 10px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+table.data-table th { background: #ebe9e2; font-weight: 700; }
+
+/* -------------------- Badges -------------------- */
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  margin-left: 4px;
+}
+.badge-active { color: var(--accent-dark); border-color: var(--accent); }
+.badge-offer, .badge-pending, .badge-countered { color: var(--warn); border-color: var(--warn); }
+.badge-sold, .badge-completed, .badge-paid, .badge-accepted, .badge-confirmed { color: var(--accent-dark); border-color: var(--accent); background: var(--accent-light); }
+.badge-rejected { color: var(--danger); border-color: var(--danger); }
+.badge-fpo { color: var(--accent-dark); border-color: var(--accent); background: var(--accent-light); }
+.badge-verified { color: var(--accent-dark); border-color: var(--accent); background: var(--accent-light); }
+
+/* -------------------- Progress bar (Lot / Group Sale) -------------------- */
+.progress-track {
+  background: #ebe9e2;
+  border: 1px solid var(--border);
+  height: 18px;
+  width: 100%;
+  margin: 8px 0;
+}
+.progress-fill { background: var(--accent); height: 100%; }
+.progress-label { font-size: 13px; color: var(--text-muted); }
+
+/* -------------------- Chart (hand-rolled inline SVG, no chart library) -------------------- */
+.chart-wrap { overflow-x: auto; }
+.chart-wrap svg { display: block; }
+
+/* -------------------- Landing -------------------- */
+.landing {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 16px;
+  text-align: center;
+}
+.landing .brand-big { font-size: 34px; font-weight: 700; margin-bottom: 8px; }
+.landing .tagline { color: var(--text-muted); font-size: 16px; margin-bottom: 28px; }
+.landing .role-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
+.landing .role-btn {
+  flex: 1 1 200px;
+  max-width: 240px;
+  background: var(--surface);
+  border: 2px solid var(--border);
+  padding: 22px 16px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 17px;
+}
+.landing .role-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
+.landing .lang-picker { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+.landing .lang-chip {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.landing .lang-chip.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent-dark); font-weight: 700; }
+
+/* -------------------- Notifications -------------------- */
+.notif-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* -------------------- Empty state -------------------- */
+.empty-state { color: var(--text-muted); font-style: italic; padding: 16px 0; }
+
+@media (max-width: 640px) {
+  .page { padding: 14px 12px 40px; }
+  body { font-size: 15px; }
+}
